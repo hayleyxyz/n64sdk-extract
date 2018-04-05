@@ -8,7 +8,11 @@ namespace n64sdk_extract
 
         static void Main(string[] args) {
             if(args.Length < 3) {
-                Console.WriteLine("usage: {0} <.idb file> <.dev file> <output dir>", Path.GetFileName(Environment.GetCommandLineArgs()[0]));
+                Console.WriteLine(
+                    "usage: {0} <.idb file> <.dev file> <output dir>",
+                    Path.GetFileNameWithoutExtension(Environment.GetCommandLineArgs()[0])
+                );
+
                 Environment.Exit(1);
             }
 
